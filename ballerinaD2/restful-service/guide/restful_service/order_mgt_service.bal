@@ -80,7 +80,7 @@ service<http:Service> orderMgt bind listener {
 
     @http:ResourceConfig {
         methods: ["DELETE"],
-        path: "/order/{orderId"
+        path: "/order/{orderId}"
     }
     cancelOrder(endpoint client, http:Request req, string orderId) {
         http:Response response;
