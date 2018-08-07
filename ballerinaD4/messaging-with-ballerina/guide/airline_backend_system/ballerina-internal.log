@@ -1,0 +1,255 @@
+[2018-08-07 06:13:01,528] WARN  {org.wso2.andes.jndi.PropertiesFileInitialContextFactory} - Unable to create factory:Port number must be specified between indicies 10 and 11 
+tcp://amqp://erdagsrd:***@zebra.rmq.cloudamqp.com/erdagsrd:5672
+          ^^^^^^^^^^^  
+[2018-08-07 06:13:01,537] ERROR {org.ballerinalang.net.jms.JMSUtils} - Error while connecting to broker. 
+javax.naming.ConfigurationException: Failed to parse entry: Port number must be specified between indicies 10 and 11 
+tcp://amqp://erdagsrd:***@zebra.rmq.cloudamqp.com/erdagsrd:5672
+          ^^^^^^^^^^^ due to : Port number must be specified at index 10: tcp://amqp://erdagsrd:***@zebra.rmq.cloudamqp.com/erdagsrd:5672 [Root exception is Port number must be specified between indicies 10 and 11 
+tcp://amqp://erdagsrd:***@zebra.rmq.cloudamqp.com/erdagsrd:5672
+          ^^^^^^^^^^^]
+	at org.wso2.andes.jndi.PropertiesFileInitialContextFactory.createFactory(PropertiesFileInitialContextFactory.java:313)
+	at org.wso2.andes.jndi.PropertiesFileInitialContextFactory.createConnectionFactories(PropertiesFileInitialContextFactory.java:186)
+	at org.wso2.andes.jndi.PropertiesFileInitialContextFactory.getInitialContext(PropertiesFileInitialContextFactory.java:152)
+	at javax.naming.spi.NamingManager.getInitialContext(NamingManager.java:684)
+	at javax.naming.InitialContext.getDefaultInitCtx(InitialContext.java:313)
+	at javax.naming.InitialContext.init(InitialContext.java:244)
+	at javax.naming.InitialContext.<init>(InitialContext.java:216)
+	at org.ballerinalang.net.jms.JMSUtils.createConnection(JMSUtils.java:112)
+	at org.ballerinalang.net.jms.nativeimpl.endpoint.connection.CreateConnection.execute(CreateConnection.java:59)
+	at org.ballerinalang.util.program.BLangFunctions.invokeNativeCallable(BLangFunctions.java:389)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:260)
+	at org.ballerinalang.bre.bvm.CPU.invokeVirtualFunction(CPU.java:2888)
+	at org.ballerinalang.bre.bvm.CPU.tryExec(CPU.java:419)
+	at org.ballerinalang.bre.bvm.CPU.exec(CPU.java:153)
+	at org.ballerinalang.bre.bvm.BLangScheduler.executeNow(BLangScheduler.java:81)
+	at org.ballerinalang.util.program.BLangFunctions.invokeNonNativeCallable(BLangFunctions.java:320)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:267)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:247)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunction(BLangFunctions.java:467)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunction(BLangFunctions.java:476)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunctions(BLangFunctions.java:126)
+	at org.ballerinalang.BLangProgramRunner.runService(BLangProgramRunner.java:53)
+	at org.ballerinalang.launcher.LauncherUtils.runServices(LauncherUtils.java:145)
+	at org.ballerinalang.launcher.LauncherUtils.runProgram(LauncherUtils.java:115)
+	at org.ballerinalang.launcher.Main$RunCmd.execute(Main.java:256)
+	at java.util.Optional.ifPresent(Optional.java:159)
+	at org.ballerinalang.launcher.Main.main(Main.java:66)
+Caused by: Port number must be specified between indicies 10 and 11 
+tcp://amqp://erdagsrd:***@zebra.rmq.cloudamqp.com/erdagsrd:5672
+          ^^^^^^^^^^^
+	at org.wso2.andes.url.URLHelper.parseError(URLHelper.java:141)
+	at org.wso2.andes.client.AMQBrokerDetails.<init>(AMQBrokerDetails.java:141)
+	at org.wso2.andes.client.url.URLParser.processOptions(URLParser.java:191)
+	at org.wso2.andes.client.url.URLParser.parseURL(URLParser.java:129)
+	at org.wso2.andes.client.url.URLParser.<init>(URLParser.java:41)
+	at org.wso2.andes.client.AMQConnectionURL.<init>(AMQConnectionURL.java:65)
+	at org.wso2.andes.client.AMQConnectionFactory.<init>(AMQConnectionFactory.java:83)
+	at org.wso2.andes.jndi.PropertiesFileInitialContextFactory.createFactory(PropertiesFileInitialContextFactory.java:307)
+	... 26 more
+ 
+[2018-08-07 06:18:49,462] WARN  {org.wso2.andes.client.state.AMQStateManager} - No Waiters for error saving as last error:Exception thrown against AMQConnection:
+Host: zebra-01.rmq.cloudamqp.com
+Port: 5672
+Virtual Host: default
+Client ID: ballerina
+Active session count: 0: org.wso2.andes.AMQDisconnectedException: Server closed connection and reconnection not permitted.  
+[2018-08-07 06:18:49,462] ERROR {org.ballerinalang.net.jms.JMSUtils} - Error while connecting to broker. 
+javax.jms.JMSException: Error creating connection: Unable to Connect
+	at org.wso2.andes.client.AMQConnectionFactory.createConnection(AMQConnectionFactory.java:346)
+	at org.wso2.andes.client.AMQConnectionFactory.createConnection(AMQConnectionFactory.java:53)
+	at org.ballerinalang.net.jms.JMSUtils.createConnection(JMSUtils.java:125)
+	at org.ballerinalang.net.jms.nativeimpl.endpoint.connection.CreateConnection.execute(CreateConnection.java:59)
+	at org.ballerinalang.util.program.BLangFunctions.invokeNativeCallable(BLangFunctions.java:389)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:260)
+	at org.ballerinalang.bre.bvm.CPU.invokeVirtualFunction(CPU.java:2888)
+	at org.ballerinalang.bre.bvm.CPU.tryExec(CPU.java:419)
+	at org.ballerinalang.bre.bvm.CPU.exec(CPU.java:153)
+	at org.ballerinalang.bre.bvm.BLangScheduler.executeNow(BLangScheduler.java:81)
+	at org.ballerinalang.util.program.BLangFunctions.invokeNonNativeCallable(BLangFunctions.java:320)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:267)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:247)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunction(BLangFunctions.java:467)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunction(BLangFunctions.java:476)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunctions(BLangFunctions.java:126)
+	at org.ballerinalang.BLangProgramRunner.runService(BLangProgramRunner.java:53)
+	at org.ballerinalang.launcher.LauncherUtils.runServices(LauncherUtils.java:145)
+	at org.ballerinalang.launcher.LauncherUtils.runProgram(LauncherUtils.java:115)
+	at org.ballerinalang.launcher.Main$RunCmd.execute(Main.java:256)
+	at java.util.Optional.ifPresent(Optional.java:159)
+	at org.ballerinalang.launcher.Main.main(Main.java:66)
+Caused by: org.wso2.andes.AMQConnectionFailureException: Unable to Connect
+	at org.wso2.andes.client.AMQConnection.<init>(AMQConnection.java:485)
+	at org.wso2.andes.client.AMQConnectionFactory.createConnection(AMQConnectionFactory.java:328)
+	... 21 more
+ 
+[2018-08-07 06:18:49,475] WARN  {org.wso2.andes.client.AMQConnection} - Throwable Received but no listener set: org.wso2.andes.AMQDisconnectedException: Server closed connection and reconnection not permitted.  
+[2018-08-07 06:18:49,479] WARN  {org.wso2.andes.client.AMQConnection} - Throwable Received but no listener set: org.wso2.andes.AMQException: AMQP timed out when attempting to close the connection   
+[2018-08-07 06:21:34,733] ERROR {org.ballerinalang.net.jms.JMSUtils} - Error while connecting to broker. 
+javax.jms.JMSException: Error creating connection: Unable to Connect
+	at org.wso2.andes.client.AMQConnectionFactory.createConnection(AMQConnectionFactory.java:346)
+	at org.wso2.andes.client.AMQConnectionFactory.createConnection(AMQConnectionFactory.java:53)
+	at org.ballerinalang.net.jms.JMSUtils.createConnection(JMSUtils.java:125)
+	at org.ballerinalang.net.jms.nativeimpl.endpoint.connection.CreateConnection.execute(CreateConnection.java:59)
+	at org.ballerinalang.util.program.BLangFunctions.invokeNativeCallable(BLangFunctions.java:389)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:260)
+	at org.ballerinalang.bre.bvm.CPU.invokeVirtualFunction(CPU.java:2888)
+	at org.ballerinalang.bre.bvm.CPU.tryExec(CPU.java:419)
+	at org.ballerinalang.bre.bvm.CPU.exec(CPU.java:153)
+	at org.ballerinalang.bre.bvm.BLangScheduler.executeNow(BLangScheduler.java:81)
+	at org.ballerinalang.util.program.BLangFunctions.invokeNonNativeCallable(BLangFunctions.java:320)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:267)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:247)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunction(BLangFunctions.java:467)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunction(BLangFunctions.java:476)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunctions(BLangFunctions.java:126)
+	at org.ballerinalang.BLangProgramRunner.runService(BLangProgramRunner.java:53)
+	at org.ballerinalang.launcher.LauncherUtils.runServices(LauncherUtils.java:145)
+	at org.ballerinalang.launcher.LauncherUtils.runProgram(LauncherUtils.java:115)
+	at org.ballerinalang.launcher.Main$RunCmd.execute(Main.java:256)
+	at java.util.Optional.ifPresent(Optional.java:159)
+	at org.ballerinalang.launcher.Main.main(Main.java:66)
+Caused by: org.wso2.andes.AMQConnectionFailureException: Unable to Connect
+	at org.wso2.andes.client.AMQConnection.<init>(AMQConnection.java:485)
+	at org.wso2.andes.client.AMQConnectionFactory.createConnection(AMQConnectionFactory.java:328)
+	... 21 more
+ 
+[2018-08-07 06:21:34,733] WARN  {org.wso2.andes.client.state.AMQStateManager} - No Waiters for error saving as last error:Exception thrown against AMQConnection:
+Host: zebra-01.rmq.cloudamqp.com
+Port: 5672
+Virtual Host: default
+Client ID: ballerina
+Active session count: 0: org.wso2.andes.AMQDisconnectedException: Server closed connection and reconnection not permitted.  
+[2018-08-07 06:21:34,745] WARN  {org.wso2.andes.client.AMQConnection} - Throwable Received but no listener set: org.wso2.andes.AMQDisconnectedException: Server closed connection and reconnection not permitted.  
+[2018-08-07 06:21:34,746] WARN  {org.wso2.andes.client.AMQConnection} - Throwable Received but no listener set: org.wso2.andes.AMQException: AMQP timed out when attempting to close the connection   
+[2018-08-07 06:21:34,733] WARN  {org.wso2.andes.client.state.AMQStateManager} - No Waiters for error saving as last error:Exception thrown against AMQConnection:
+Host: zebra-01.rmq.cloudamqp.com
+Port: 5672
+Virtual Host: default
+Client ID: ballerina
+Active session count: 0: org.wso2.andes.AMQDisconnectedException: Server closed connection and reconnection not permitted.  
+[2018-08-07 06:21:34,748] WARN  {org.wso2.andes.client.AMQConnection} - Throwable Received but no listener set: org.wso2.andes.AMQDisconnectedException: Server closed connection and reconnection not permitted.  
+[2018-08-07 06:25:00,400] WARN  {org.wso2.andes.client.state.AMQStateManager} - No Waiters for error saving as last error:Exception thrown against AMQConnection:
+Host: zebra-01.rmq.cloudamqp.com
+Port: 5672
+Virtual Host: erdagsrd
+Client ID: ballerina
+Active session count: 0: org.wso2.andes.AMQDisconnectedException: Server closed connection and reconnection not permitted.  
+[2018-08-07 06:25:00,400] ERROR {org.ballerinalang.net.jms.JMSUtils} - Error while connecting to broker. 
+javax.jms.JMSException: Error creating connection: Unable to Connect
+	at org.wso2.andes.client.AMQConnectionFactory.createConnection(AMQConnectionFactory.java:346)
+	at org.wso2.andes.client.AMQConnectionFactory.createConnection(AMQConnectionFactory.java:53)
+	at org.ballerinalang.net.jms.JMSUtils.createConnection(JMSUtils.java:125)
+	at org.ballerinalang.net.jms.nativeimpl.endpoint.connection.CreateConnection.execute(CreateConnection.java:59)
+	at org.ballerinalang.util.program.BLangFunctions.invokeNativeCallable(BLangFunctions.java:389)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:260)
+	at org.ballerinalang.bre.bvm.CPU.invokeVirtualFunction(CPU.java:2888)
+	at org.ballerinalang.bre.bvm.CPU.tryExec(CPU.java:419)
+	at org.ballerinalang.bre.bvm.CPU.exec(CPU.java:153)
+	at org.ballerinalang.bre.bvm.BLangScheduler.executeNow(BLangScheduler.java:81)
+	at org.ballerinalang.util.program.BLangFunctions.invokeNonNativeCallable(BLangFunctions.java:320)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:267)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:247)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunction(BLangFunctions.java:467)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunction(BLangFunctions.java:476)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunctions(BLangFunctions.java:126)
+	at org.ballerinalang.BLangProgramRunner.runService(BLangProgramRunner.java:53)
+	at org.ballerinalang.launcher.LauncherUtils.runServices(LauncherUtils.java:145)
+	at org.ballerinalang.launcher.LauncherUtils.runProgram(LauncherUtils.java:115)
+	at org.ballerinalang.launcher.Main$RunCmd.execute(Main.java:256)
+	at java.util.Optional.ifPresent(Optional.java:159)
+	at org.ballerinalang.launcher.Main.main(Main.java:66)
+Caused by: org.wso2.andes.AMQConnectionFailureException: Unable to Connect
+	at org.wso2.andes.client.AMQConnection.<init>(AMQConnection.java:485)
+	at org.wso2.andes.client.AMQConnectionFactory.createConnection(AMQConnectionFactory.java:328)
+	... 21 more
+ 
+[2018-08-07 06:25:00,411] WARN  {org.wso2.andes.client.AMQConnection} - Throwable Received but no listener set: org.wso2.andes.AMQDisconnectedException: Server closed connection and reconnection not permitted.  
+[2018-08-07 06:25:00,417] WARN  {org.wso2.andes.client.AMQConnection} - Throwable Received but no listener set: org.wso2.andes.AMQException: AMQP timed out when attempting to close the connection   
+[2018-08-07 06:29:30,012] ERROR {org.ballerinalang.net.jms.JMSUtils} - Error while connecting to broker. 
+javax.jms.JMSException: Error creating connection: Unable to Connect
+	at org.wso2.andes.client.AMQConnectionFactory.createConnection(AMQConnectionFactory.java:346)
+	at org.wso2.andes.client.AMQConnectionFactory.createConnection(AMQConnectionFactory.java:53)
+	at org.ballerinalang.net.jms.JMSUtils.createConnection(JMSUtils.java:125)
+	at org.ballerinalang.net.jms.nativeimpl.endpoint.connection.CreateConnection.execute(CreateConnection.java:59)
+	at org.ballerinalang.util.program.BLangFunctions.invokeNativeCallable(BLangFunctions.java:389)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:260)
+	at org.ballerinalang.bre.bvm.CPU.invokeVirtualFunction(CPU.java:2888)
+	at org.ballerinalang.bre.bvm.CPU.tryExec(CPU.java:419)
+	at org.ballerinalang.bre.bvm.CPU.exec(CPU.java:153)
+	at org.ballerinalang.bre.bvm.BLangScheduler.executeNow(BLangScheduler.java:81)
+	at org.ballerinalang.util.program.BLangFunctions.invokeNonNativeCallable(BLangFunctions.java:320)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:267)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:247)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunction(BLangFunctions.java:467)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunction(BLangFunctions.java:476)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunctions(BLangFunctions.java:126)
+	at org.ballerinalang.BLangProgramRunner.runService(BLangProgramRunner.java:53)
+	at org.ballerinalang.launcher.LauncherUtils.runServices(LauncherUtils.java:145)
+	at org.ballerinalang.launcher.LauncherUtils.runProgram(LauncherUtils.java:115)
+	at org.ballerinalang.launcher.Main$RunCmd.execute(Main.java:256)
+	at java.util.Optional.ifPresent(Optional.java:159)
+	at org.ballerinalang.launcher.Main.main(Main.java:66)
+Caused by: org.wso2.andes.AMQConnectionFailureException: Unable to Connect
+	at org.wso2.andes.client.AMQConnection.<init>(AMQConnection.java:485)
+	at org.wso2.andes.client.AMQConnectionFactory.createConnection(AMQConnectionFactory.java:328)
+	... 21 more
+ 
+[2018-08-07 06:29:30,013] WARN  {org.wso2.andes.client.state.AMQStateManager} - No Waiters for error saving as last error:Exception thrown against AMQConnection:
+Host: zebra-01.rmq.cloudamqp.com
+Port: 5672
+Virtual Host: erdagsrd
+Client ID: ballerina
+Active session count: 0: org.wso2.andes.AMQDisconnectedException: Server closed connection and reconnection not permitted.  
+[2018-08-07 06:29:30,013] WARN  {org.wso2.andes.client.state.AMQStateManager} - No Waiters for error saving as last error:Exception thrown against AMQConnection:
+Host: zebra-01.rmq.cloudamqp.com
+Port: 5672
+Virtual Host: erdagsrd
+Client ID: ballerina
+Active session count: 0: org.wso2.andes.AMQDisconnectedException: Server closed connection and reconnection not permitted.  
+[2018-08-07 06:29:30,029] WARN  {org.wso2.andes.client.AMQConnection} - Throwable Received but no listener set: org.wso2.andes.AMQDisconnectedException: Server closed connection and reconnection not permitted.  
+[2018-08-07 06:29:30,028] WARN  {org.wso2.andes.client.AMQConnection} - Throwable Received but no listener set: org.wso2.andes.AMQDisconnectedException: Server closed connection and reconnection not permitted.  
+[2018-08-07 06:29:30,031] WARN  {org.wso2.andes.client.AMQConnection} - Throwable Received but no listener set: org.wso2.andes.AMQException: AMQP timed out when attempting to close the connection   
+[2018-08-07 06:30:07,867] WARN  {org.wso2.andes.client.state.AMQStateManager} - No Waiters for error saving as last error:Exception thrown against AMQConnection:
+Host: zebra-01.rmq.cloudamqp.com
+Port: 5672
+Virtual Host: erdagsrd
+Client ID: ballerina
+Active session count: 0: org.wso2.andes.AMQDisconnectedException: Server closed connection and reconnection not permitted.  
+[2018-08-07 06:30:07,867] ERROR {org.ballerinalang.net.jms.JMSUtils} - Error while connecting to broker. 
+javax.jms.JMSException: Error creating connection: Unable to Connect
+	at org.wso2.andes.client.AMQConnectionFactory.createConnection(AMQConnectionFactory.java:346)
+	at org.wso2.andes.client.AMQConnectionFactory.createConnection(AMQConnectionFactory.java:53)
+	at org.ballerinalang.net.jms.JMSUtils.createConnection(JMSUtils.java:125)
+	at org.ballerinalang.net.jms.nativeimpl.endpoint.connection.CreateConnection.execute(CreateConnection.java:59)
+	at org.ballerinalang.util.program.BLangFunctions.invokeNativeCallable(BLangFunctions.java:389)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:260)
+	at org.ballerinalang.bre.bvm.CPU.invokeVirtualFunction(CPU.java:2888)
+	at org.ballerinalang.bre.bvm.CPU.tryExec(CPU.java:419)
+	at org.ballerinalang.bre.bvm.CPU.exec(CPU.java:153)
+	at org.ballerinalang.bre.bvm.BLangScheduler.executeNow(BLangScheduler.java:81)
+	at org.ballerinalang.util.program.BLangFunctions.invokeNonNativeCallable(BLangFunctions.java:320)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:267)
+	at org.ballerinalang.util.program.BLangFunctions.invokeCallable(BLangFunctions.java:247)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunction(BLangFunctions.java:467)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunction(BLangFunctions.java:476)
+	at org.ballerinalang.util.program.BLangFunctions.invokePackageInitFunctions(BLangFunctions.java:126)
+	at org.ballerinalang.BLangProgramRunner.runService(BLangProgramRunner.java:53)
+	at org.ballerinalang.launcher.LauncherUtils.runServices(LauncherUtils.java:145)
+	at org.ballerinalang.launcher.LauncherUtils.runProgram(LauncherUtils.java:115)
+	at org.ballerinalang.launcher.Main$RunCmd.execute(Main.java:256)
+	at java.util.Optional.ifPresent(Optional.java:159)
+	at org.ballerinalang.launcher.Main.main(Main.java:66)
+Caused by: org.wso2.andes.AMQConnectionFailureException: Unable to Connect
+	at org.wso2.andes.client.AMQConnection.<init>(AMQConnection.java:485)
+	at org.wso2.andes.client.AMQConnectionFactory.createConnection(AMQConnectionFactory.java:328)
+	... 21 more
+ 
+[2018-08-07 06:30:07,867] WARN  {org.wso2.andes.client.state.AMQStateManager} - No Waiters for error saving as last error:Exception thrown against AMQConnection:
+Host: zebra-01.rmq.cloudamqp.com
+Port: 5672
+Virtual Host: erdagsrd
+Client ID: ballerina
+Active session count: 0: org.wso2.andes.AMQDisconnectedException: Server closed connection and reconnection not permitted.  
+[2018-08-07 06:30:07,878] WARN  {org.wso2.andes.client.AMQConnection} - Throwable Received but no listener set: org.wso2.andes.AMQDisconnectedException: Server closed connection and reconnection not permitted.  
+[2018-08-07 06:30:07,883] WARN  {org.wso2.andes.client.AMQConnection} - Throwable Received but no listener set: org.wso2.andes.AMQDisconnectedException: Server closed connection and reconnection not permitted.  
+[2018-08-07 06:30:07,885] WARN  {org.wso2.andes.client.AMQConnection} - Throwable Received but no listener set: org.wso2.andes.AMQException: AMQP timed out when attempting to close the connection   
